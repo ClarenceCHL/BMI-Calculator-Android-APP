@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/englishButton"
+            android:layout_width="135dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:checked="true"
+            android:text="@string/english_unit" />
+
+        <RadioButton
+            android:id="@+id/metricButton"
+            android:layout_width="135dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/metric_unit" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/calculateBMI"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="@string/calculate_bmi"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.716" />
+
+    <Button
+        android:id="@+id/getAdvice"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/get_advice"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/calculateBMI"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/calculateBMI"
+        app:layout_constraintTop_toBottomOf="@+id/calculateBMI"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <TextView
+        android:id="@+id/outputBMI"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:background="#93CBFD"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBMI"
+        app:layout_constraintEnd_toEndOf="@+id/inputHeight"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/inputHeight"
+        app:layout_constraintTop_toBottomOf="@+id/inputHeight"
+        app:layout_constraintVertical_bias="0.712" />
+
+    <EditText
+        android:id="@+id/inputHeight"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="@string/enter_height_in_inches"
+        android:importantForAutofill="no"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBMI"
+        app:layout_constraintEnd_toEndOf="@+id/inputWeight"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/inputWeight"
+        app:layout_constraintTop_toBottomOf="@+id/inputWeight"
+        app:layout_constraintVertical_bias="0.104" />
+
+    <EditText
+        android:id="@+id/inputWeight"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="@string/enter_weight_in_pounds"
+        android:importantForAutofill="no"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBMI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419" />
+
+    <TextView
+        android:id="@+id/weightView"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:text="@string/weight"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.236" />
+
+    <TextView
+        android:id="@+id/heightView"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="3dp"
+        android:text="@string/height"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/weightView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/weightView"
+        app:layout_constraintTop_toBottomOf="@+id/inputWeight"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/BMIView"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:text="@string/bmi_result"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/outputBMI"
+        app:layout_constraintEnd_toStartOf="@+id/outputBMI"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/outputBMI"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
